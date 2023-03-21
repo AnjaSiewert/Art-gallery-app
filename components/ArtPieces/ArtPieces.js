@@ -1,5 +1,4 @@
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
-import Image from "next/image";
 
 export default function ArtPieces({ pieces }) {
   return (

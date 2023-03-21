@@ -8,7 +8,7 @@ export default function HomePage() {
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
-  console.log(data);
+
   if (error) return "An error has occurred.";
   if (isLoading) return "is loading";
 
