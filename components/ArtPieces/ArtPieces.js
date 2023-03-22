@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 
 export default function ArtPieces({ pieces }) {
@@ -6,14 +7,16 @@ export default function ArtPieces({ pieces }) {
       <ul>
         {pieces.map((piece) => {
           return (
-            <li key={piece.slug}>
-              <ArtPiecePreview
-                image={piece.imageSource}
-                name={piece.name}
-                title={piece.name}
-                artist={piece.artist}
-              />
-            </li>
+            <>
+              <li key={piece.slug}>
+                <ArtPiecePreview
+                  image={piece.imageSource}
+                  name={piece.name}
+                  title={piece.name}
+                  artist={piece.artist}
+                />
+              </li>
+            </>
           );
         })}
       </ul>
