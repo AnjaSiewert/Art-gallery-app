@@ -5,7 +5,7 @@ import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
 export default function ArtPieceDetailsPage({
   pieces,
   onToggleFavorite,
-  isFavorite,
+  artPiecesInfo,
 }) {
   const router = useRouter();
   const { slug } = router.query;
@@ -14,6 +14,13 @@ export default function ArtPieceDetailsPage({
   if (!selectedArtPiece) {
     return null;
   }
+
+  const { isFavorite } = artPiecesInfo.find(
+    (info) => info.slug === selectedArtPiece.slug
+  ) ?? {
+    isFavorite: false,
+  };
+
   return (
     <>
       <ArtPieceDetails
@@ -24,6 +31,7 @@ export default function ArtPieceDetailsPage({
         genre={selectedArtPiece.genre}
       />
       <FavoriteButton
+        slug={selectedArtPiece.slug}
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
       />
