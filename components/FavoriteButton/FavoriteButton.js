@@ -1,15 +1,11 @@
 import Heart from "./heart.svg";
 
-export default function FavoriteButton({
-  piece,
-  isFavorite,
-  onToggleFavorite,
-}) {
+export default function FavoriteButton({ slug, isFavorite, onToggleFavorite }) {
   return (
     <>
       <button
         onClick={() => {
-          onToggleFavorite(piece.slug);
+          onToggleFavorite(slug);
         }}
       >
         <Heart height={32} width={32} />

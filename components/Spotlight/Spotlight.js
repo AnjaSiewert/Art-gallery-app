@@ -12,7 +12,7 @@ export default function Spotlight({ pieces }) {
         width={250}
         height={250}
       />
-      <FavoriteButton />
+      <FavoriteButton slug={randomImage.slug} />
       <q>{randomImage.artist}</q>
     </>
   );
