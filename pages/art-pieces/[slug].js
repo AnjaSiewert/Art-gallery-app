@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import ArtPieceDetails from "../../components/ArtPieceDetails/ArtPieceDetails";
+import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
 
 export default function ArtPieceDetailsPage({ pieces }) {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function ArtPieceDetailsPage({ pieces }) {
         year={selectedArtPiece.year}
         genre={selectedArtPiece.genre}
       />
+      <FavoriteButton />
     </>
   );
 }
