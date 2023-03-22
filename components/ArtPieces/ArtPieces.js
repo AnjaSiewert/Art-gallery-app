@@ -18,6 +18,7 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
                 <FavoriteButton
                   slug={slug}
                   onToggleFavorite={onToggleFavorite}
+                  isFavorite={isFavorite}
                 />
                 <Link href={`/art-pieces/${slug}`}>
                   <ArtPiecePreview
