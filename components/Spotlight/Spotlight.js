@@ -4,12 +4,6 @@ import FavoriteButton from "../FavoriteButton/FavoriteButton";
 export default function Spotlight({ pieces, onToggleFavorite, artPiecesInfo }) {
   const randomImage = pieces[Math.floor(Math.random() * pieces.length)];
 
-  const { isFavorite } = artPiecesInfo.find(
-    (info) => info.slug === randomImage.slug
-  ) ?? {
-    isFavorite: false,
-  };
-
   return (
     <>
       <Image
@@ -20,7 +14,7 @@ export default function Spotlight({ pieces, onToggleFavorite, artPiecesInfo }) {
       />
       <FavoriteButton
         slug={randomImage.slug}
-        isFavorite={isFavorite}
+        artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
       />
       <q>{randomImage.artist}</q>
