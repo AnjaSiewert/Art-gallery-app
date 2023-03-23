@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 const StyledListElement = styled.li`
   list-style: none;
@@ -12,6 +13,8 @@ export default function ArtPieceDetails({
   artist,
   year,
   genre,
+  artPiecesInfo,
+  onToggleFavorite,
 }) {
   return (
     <>
@@ -29,6 +32,11 @@ export default function ArtPieceDetails({
         <StyledListElement>Year: {year}</StyledListElement>
         <StyledListElement>Genre: {genre}</StyledListElement>
       </ul>
+      <FavoriteButton
+        slug={selectedArtPiece.slug}
+        artPiecesInfo={artPiecesInfo}
+        onToggleFavorite={onToggleFavorite}
+      />
     </>
   );
 }
